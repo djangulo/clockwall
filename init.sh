@@ -2,7 +2,7 @@
 go build -o ./clok -ldflags "-w" ./clock
 go build -o ./clockwall -ldflags "-w" ./main.go
 
-ZONEINFO="C:\\Users\\da00440056\\Documents\\cygwin\\usr\\share\\zoneinfo"
+ZONEINFO=/usr/share/zoneinfo
 
 TZ=Asia/Tokyo ./clok -p 8001 -z $ZONEINFO & \
 TZ=US/Alaska ./clok -p 8002 -z $ZONEINFO & \
