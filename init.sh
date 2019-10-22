@@ -2,7 +2,9 @@
 go build -o ./clok -ldflags "-w" ./clock
 go build -o ./clockwall -ldflags "-w" ./main.go
 
-ZONEINFO=/usr/share/zoneinfo
+if [ -z ZONEINFO ] ; then
+    ZONEINFO=/usr/share/zoneinfo
+fi
 
 TZ=Asia/Tokyo ./clok -p 8001 -z $ZONEINFO & \
 TZ=US/Alaska ./clok -p 8002 -z $ZONEINFO & \
